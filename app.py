@@ -107,9 +107,6 @@ def get_exp_group(user_id: int) -> str:
         return 'test'
     return 'unknown'
 
-#@app.get("/post/recommendations/", response_model=List[PostGet])
-#def get_rec_control(id: int = None, limit: int = 5, db: Session = Depends(get_db)) -> List[PostGet]:
-
 def get_rec_for_exp(id: int, limit: int, user_group: str, user_prep: pd.DataFrame, post_prep: pd.DataFrame, model: None, db = None) -> List[Response]:
 
     user_qr = user_prep[user_prep['user_id'] == id].drop('user_id', axis =1)
@@ -129,15 +126,6 @@ def get_rec_for_exp(id: int, limit: int, user_group: str, user_prep: pd.DataFram
     else:
         return full_result
 
-
-    #return result
-    #return Response(
-    #    recommendations=[
-    #        PostGet(id=i[0], text='lexa', topic=i[1])
-    #        for i in user_prep.itertuples(index=False)
-    #    ],
-    #    exp_group=user_group
-    #)
 
 @app.get("/post/recommendations/", response_model=Response)
 def get_rec(id: int = None, limit: int = 5, db: Session = Depends(get_db)) -> List[Response]:
