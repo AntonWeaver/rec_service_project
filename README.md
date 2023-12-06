@@ -1,4 +1,4 @@
-# study_course_project
+# Posts recommendation system service/feature
 This is study project developed during the studying at Karpov.courses
 
 The project's essence is to implement a service that will, at any given moment, return posts for each user to be displayed in their social media feed. Essentially, it involves building a recommendation system for posts within the social network.
