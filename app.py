@@ -16,7 +16,7 @@ import hashlib
 
 #from schema import PostGet
 
-SQLALCHEMY_DATABASE_URL = "postgresql://robot-startml-ro:pheiph0hahj1Vaif@postgres.lab.karpov.courses:6432/startml"
+SQLALCHEMY_DATABASE_URL = "XXXX"
 engine = create_engine(SQLALCHEMY_DATABASE_URL, pool_size=10, max_overflow=-1)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
@@ -42,7 +42,7 @@ def batch_load_sql(query: str) -> pd.DataFrame:
     CHUNKSIZE = 200000
     engine = create_engine(
         "postgresql://XXX"
-        "postgres.lab.karpov.courses:6432/startml"
+        "postgresXXX"
     )
     conn = engine.connect().execution_options(stream_results=True)
     chunks = []
